@@ -368,11 +368,8 @@ main {
 
 /* course-section */
 
-.fa-solid {
-    padding: 2.4rem;
+.icon i {
     font-size: 2.4rem;
-    border-radius: 50%;
-    background-color: #f3f3f3;
     color: blue;
 }
 
@@ -387,6 +384,14 @@ main {
 .course-sec .course-div {
     padding: 2.4rem;
 }
+.course-sec .course-div .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
 
 .course-sec .course-div:hover {
     background-color: white;
@@ -399,22 +404,22 @@ main {
 
 .course-div:nth-child(2) .icon .fa-solid {
     color: #68bf9b;
-    background-color: #e7f6e7;
+    /* background-color: #e7f6e7; */
 }
 
 .course-div:nth-child(3) .icon .fa-solid {
     color: #ff8b52;
-    background-color: #fbebe8;
+    /* background-color: #fbebe8; */
 }
 
 .course-div:nth-child(4) .icon .fa-solid {
     color: #183d3d;
-    background-color: #ccf7f7;
+    /* background-color: #ccf7f7; */
 }
 
 .course-div:nth-child(5) .icon .fa-solid {
     color: #d988b9;
-    background-color: rgb(247, 223, 238);
+    /* background-color: rgb(247, 223, 238); */
 }
 
 .course-div:nth-child(6) .icon .fa-solid {
