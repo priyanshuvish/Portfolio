@@ -41,10 +41,14 @@ li {
 }
 
 .container {
-    max-width: 142rem;
+    max-width: 90%;
     padding: 9.6rem 2.4rem;
     margin: 0 auto;
 }
+
+/* .nav-section .container{
+    padding: 0 2.4rem;
+} */
 
 :is(.about-sec,
     .blog-sec,
@@ -68,7 +72,7 @@ li {
 }
 
 .btn svg,
-.btn svg rect{
+.btn svg rect {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,17 +88,20 @@ li {
     animation: sk .2s linear;
 }
 
-@keyframes sk{
-    0%{
+@keyframes sk {
+    0% {
         stroke-dasharray: 1;
     }
-    25%{
+
+    25% {
         stroke-dasharray: 2;
     }
-    50%{
+
+    50% {
         stroke-dasharray: 3;
     }
-    100%{
+
+    100% {
         stroke-dasharray: 4;
     }
 }
@@ -208,14 +215,14 @@ main {
 
 .hero-sec-image img {
     height: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 50%;
 }
+
 .hero-sec-image .shape {
     width: 75%;
     height: auto;
-    position: relative;
     left: 10%;
 }
 
@@ -224,7 +231,7 @@ main {
     height: auto;
     position: absolute;
     bottom: 0;
-    left: 62%;
+    left: 60%;
     filter: drop-shadow(20px 2px 9px #0f2138);
     padding-bottom: 2.5rem;
     transition: all .3s linear;
@@ -262,25 +269,27 @@ main {
     display: flex;
 }
 
-.hero-sec .hero-heading .typing-text{
+.hero-sec .hero-heading .typing-text {
     color: #021b79;
     white-space: nowrap;
     overflow: hidden;
     border-right: .4rem solid #0ee3ff;
-    animation: typing 5s steps(25) infinite;
+    animation: typing 5.2s steps(35) infinite;
 }
 
-@keyframes typing{
-    0%{
+@keyframes typing {
+    0% {
         width: 0ch;
     }
-    50%{
-        width: 21ch;
+
+    50% {
+        width: 22ch;
     }
-    100%{
+
+    100% {
         width: 0ch;
     }
-   
+
 }
 
 .hero-sec .hero-para {
@@ -309,7 +318,7 @@ main {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     transition: all 0.3s linear;
 }
 
@@ -337,14 +346,24 @@ main {
 
 .about-sec .about-div {
     text-align: center;
+    width: 400px;
 }
 
 .grid-three-cols {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.resp_about {
+    /* grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
 .about-sec .grid {
-    gap: 6.4rem;
+    gap: 5.4rem;
 }
 
 /* course-section */
@@ -515,6 +534,7 @@ figure {
     bottom: -15rem;
     z-index: 1;
     background-color: white;
+    margin-top: -11rem;
 
     & .grid {
         align-items: center;
@@ -580,7 +600,7 @@ footer .grid {
 
 .footer-1-div {
     text-align: center;
-} 
+}
 
 footer .footer-1-div .footer-social-icons {
     display: flex;
@@ -604,4 +624,215 @@ footer .footer-1-div .fa-brands:hover {
     background-color: #f3f3f3;
     color: #0b2042;
     rotate: 360deg;
+}
+
+.ham {
+    position: relative;
+    display: flex;
+    background: #699fff;
+    border-radius: 50%;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    display: none;
+
+}
+
+.ham::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.5em 0 0 #fff, 0 1em 0 0 #fff;
+    top: 19px;
+}
+
+.cross {
+    text-align: right;
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    top: 0;
+    left: -100%;
+    background: #0000006b;
+    z-index: 8;
+}
+
+
+
+
+/* responsive */
+
+
+@media (max-width: 1400px) {
+
+    html {
+        font-size: 56.25%;
+    }
+
+    .hero-sec-img {
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 1220px) {
+
+    html {
+        font-size: 54%;
+    }
+
+
+
+}
+
+
+@media (max-width: 998px) {
+    .grid-three-cols {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .choose-sec .text-align-right .why-choose-div {
+        align-items: center;
+        text-align: center;
+    }
+
+    .why-choose-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grid-four-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-sec {
+        & .grid-two-cols {
+            grid-template-columns: 1fr;
+        }
+
+        & .hero-sec-content {
+            order: 2;
+            display: grid;
+        }
+
+        & .hero-sec-image {
+            order: 1;
+        }
+
+        /* & .hero-sec-image .man{
+            order: 1;
+        } */
+
+
+    }
+
+    .hero-sec-image .shape {
+        width: 38%;
+        left: 25%;
+    }
+
+    .hero-sec-image .man {
+        left: 34%;
+        top: 6%;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .grid-four-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-sec-homepage {
+        width: 80%;
+    }
+
+    .contact-title {
+        font-size: 3rem;
+    }
+
+    .contact-sec-homepage & .grid {
+        gap: 3.4rem;
+    }
+
+    .container {
+        padding: 5.6rem 2.4rem;
+    }
+}
+
+@media (max-width: 571px) {
+    .nav-section .navbar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 9;
+        background: #315493;
+        width: 300px;
+        padding: 20px;
+        height: 100%;
+        transition: .3s;
+    }
+    .nav-section .navbar ul {
+        flex-direction: column;
+    }
+
+    .cross {
+        display: block;
+    }
+
+    .ham {
+        display: flex;
+    }
+    :is(.about-sec, .blog-sec, .contact-sec, .course-sec, .choose-sec, .contact-sec-homepage) .container:first-child {
+        padding: 3.4rem 0rem;
+    }
+    .grid-two-cols {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 461px) {
+    .hero-sec .hero-subheading,
+    .hero-sec .hero-heading {
+        font-size: 3rem;
+    }
+    .choose-center-div figure::after {
+        width: 42rem;
+    }
+    .choose-center-div figure::before, .choose-center-div figure::after {
+        width: 35rem;
+        height: 40rem;
+    }
+    .choose-center-div img {
+        width: 80%;
+    }
+    .course-sec .grid {
+        gap: 2.4rem;
+    }
+    .grid-four-cols {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    
+}
+@media (max-width: 421px) {
+    .hero-sec .hero-subheading, .hero-sec .hero-heading {
+        font-size: 2.7rem;
+    }
+    
 }
