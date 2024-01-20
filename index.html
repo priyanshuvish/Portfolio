@@ -20,8 +20,13 @@
                     <span>P</span>riyanshu
                 </a>
             </div>
+            <div class="ham"></div>
+            <div class="overlay"></div>
             <nav class="navbar">
                 <ul>
+                    <div class="cross">
+                        <span>X</span>
+                    </div>
                     <li class="nav-item">
                         <a class="nav-link" href="#homescreen">home</a>
                     </li>
@@ -55,7 +60,7 @@
                     <p class="hero-subheading">Hello, It's Me </p>
                     <div class="hero-heading">
                         <div class="typing-text">
-                            <span>Priyanshu Vishwakarma..</span>
+                            <span>Priyanshu Vishwakarma...</span>
                         </div>
                     </div>
                     <p class="hero-para">This portfolio is a representation of all that i've learned and accomplished as a
@@ -115,7 +120,7 @@
                 Learning Journey through Research, Design, and Development Excellence.
             </p>
         </div>
-        <div class="container grid grid-three-cols ">
+        <div class="container resp_about">
             <div class="about-div">
                 <div class="icon">
                     <img src="Images/html.png" alt="">
@@ -321,6 +326,27 @@
 
             </div>
         </footer>
+
+        <script>
+            let ham = document.querySelector('.ham')
+            let cross = document.querySelector('.cross')
+            let nav = document.querySelector('nav')
+            let overlay = document.querySelector('.overlay')
+            
+            ham.addEventListener('click', function () {
+                nav.style.left = '0'
+                overlay.style.left = '0'
+            })
+    
+            cross.addEventListener('click', function () {
+                nav.style.left = '-100%'
+                overlay.style.left = '-100%'
+            })
+            overlay.addEventListener('click', function () {
+                nav.style.left = '-100%'
+                overlay.style.left = '-100%'
+            })
+        </script>
 
 </body>
 
